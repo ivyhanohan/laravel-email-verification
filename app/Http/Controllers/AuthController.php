@@ -48,7 +48,7 @@ class AuthController extends Controller
         }
 
         if(!$user->email_verified_at){
-            return back()->withErrors(['email' => 'Verify your email first!'])->withInput();
+            return back()->withErrors(['email' => 'Your email is not verified!'])->withInput();
         }
 
         $credentials = $request->validate([
